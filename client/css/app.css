@@ -1,0 +1,183 @@
+#photo{
+	position:absolute;
+	left:230px;
+	top:5px;
+}
+
+#macros{
+	position:absolute;
+	left:10px;	
+	top:450px;		
+}
+
+#title{
+	position:absolute;
+	left:320px;	
+	top:0px;
+	color:rgb(0,80,100);
+}
+
+#inBuffer{
+	position:absolute;
+	display:block;
+	left:10px;
+	width:70px;
+	height:200px;
+	top:5px;
+	font-size:12px;
+	border: 1px solid blue;
+	padding: 5px;
+}
+#inData{
+	height:147px;
+	overflow-y: hidden;
+}
+#outBuffer{
+	position:absolute;
+	left:100px;
+	width:70px;
+	height:200px;
+	top:5px;
+	font-size:12px;
+	border: 1px solid blue;
+	padding: 5px;
+}
+
+#outData{
+	height:147px;
+	overflow-y: hidden;
+}
+
+#statusbar{
+	position:absolute;
+	left:550px;
+	top:30px;
+	width:400px;
+	height: 20px;
+	border: 1px solid black;
+}
+
+#digiTab{
+	position:absolute;
+	left:630px;
+	top:75px;
+	font-size:15px;
+	font-weight: bold;
+}
+
+#digiTab tr td{
+	border: 1px solid black;
+	height:17px;
+	width:17px;
+	text-align:center;
+	cursor: pointer;
+}
+
+#digiTab tr td:first-child{
+	background-color: rgb(0,80,100);
+	color:white;
+	text-align:center;
+	cursor: default;
+	border-radius: 10px;
+}
+
+#digiTab tr td[id^='pwv']{
+	width:30px;
+	text-align:right;
+	cursor: default;
+}
+#digiTab tr td:nth-child(10){
+	background-color: #ddeeee;	
+	border-radius: 25px;
+}
+#digiTab tr td div{
+	border-width: 2px;
+	border-style: solid;
+	border-color: #333 #333 #777 #333;
+	border-radius: 25px;
+	width: 120px;
+	height: 3px;
+	background-color: #666666;
+    margin-left: 10px;
+    margin-right: 10px;
+	cursor: pointer;
+}
+
+#digiTab tr td div a{
+	z-index: 2;
+	position:absolute;
+	top:-9px;
+	width: 17px;
+	height: 17px;
+	border-radius: 25px;
+	background: url('images/handle-blk.png') no-repeat 50% 50%;
+	color: #1C94C4;
+	outline: none;
+	cursor: pointer;
+}
+
+#digStateTab{
+	position:absolute;
+	left:540px;
+	top:75px;
+	font-size:15px;
+	font-weight: bold;
+	cursor: default;	
+}
+
+#digStateTab tr td{
+	border: 1px solid black;
+	height:17px;
+	width:17px;
+	text-align:center;
+}
+
+#digStateTab tr td:first-child{
+	background-color: rgb(0,80,100);
+	color:white;
+	text-align:center;
+	border-radius: 10px;
+}
+
+#digStateTab tr td:nth-last-child(-n+1){
+	width:30px;
+	text-align:right;
+}
+
+#angTab{
+	position:absolute;
+	left:35px;
+	top:220px;
+	font-size:15px;
+	font-weight: bold;
+}
+
+#angTab tr td{
+	border: 1px solid black;
+	height:17px;
+	width:17px;
+	text-align:center;
+	cursor: pointer;
+}
+#angTab tr td input{
+	border: 0;
+	height:17px;
+	width:17px;
+	text-align:right;
+	font-size:15px;
+	width:40px;
+}
+#angTab tr td:nth-child(5){
+	background-color: rgb(0,80,100);
+	color:white;
+	width:17px;
+	text-align:center;
+	cursor: default;
+	border-radius: 10px;
+}
+
+#angTab tr td:last-child{
+	width:40px;
+	text-align:right;
+	cursor: default;
+}

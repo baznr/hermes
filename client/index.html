@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hermes Demo</title>
+    <link href="css/app.css" rel="stylesheet" media="screen" >
+    <link href="css/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" media="screen" >
+    <script src="scripts/jquery-1.8.2.min.js"></script>
+    <script src="scripts/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="scripts/hermesDef.js"></script>
+    <script src="scripts/messages.js"></script>
+    <script src="scripts/agent.js"></script>
+    <script src="scripts/elements.js"></script>
+    <script src="scripts/socket.js"></script>
+</head>
+<body class="font-family:Verdana" onload="Unload()">
+<script src="http://192.168.1.4:4000/socket.io/socket.io.js"></script>
+<img id="photo" src="arduino-v.jpg" />
+<h2 id="title">Hermes Demo</h2>
+<div id="inBuffer" ><h3>RX</h3><div id="inData"> </div></div>
+<div id="outBuffer" ><h3>TX</h3><div id="outData"> </div></div>
+<div id="statusbar" >Ready </div>
+<table id="digStateTab">
+    <th colspan="3">Pin state</th>
+    <tr><td>13</td><td id="dgM13">I</td><td id="dgP13">0</td></tr>
+    <tr><td>12</td><td id="dgM12">I</td><td id="dgP12">0</td></tr>
+    <tr><td>11</td><td id="dgM11">I</td><td id="dgP11">0</td></tr>
+    <tr><td>10</td><td id="dgM10">I</td><td id="dgP10">0</td></tr>
+    <tr><td>9</td><td id="dgM9">I</td><td id="dgP9">0</td></tr>
+    <tr><td>8</td><td id="dgM8">I</td><td id="dgP8">0</td></tr>
+    <tr><td>7</td><td id="dgM7">I</td><td id="dgP7">0</td></tr>
+    <tr><td>6</td><td id="dgM6">I</td><td id="dgP6">0</td></tr>
+    <tr><td>5</td><td id="dgM5">I</td><td id="dgP5">0</td></tr>
+    <tr><td>4</td><td id="dgM4">I</td><td id="dgP4">0</td></tr>
+    <tr><td>3</td><td id="dgM3">I</td><td id="dgP3">0</td></tr>
+    <tr><td>2</td><td id="dgM2">I</td><td id="dgP2">0</td></tr>
+</table>
+
+<table id="digiTab">
+    <th colspan="8">Send Pin Commands</th>
+    <tr><td>13</td><td id="cI13">I</td><td id="cO13">O</td><td id="cS13">S</td><td id="cC13">C</td><td id="cT13">T</td><td id="cG13">R</td></tr>
+    <tr><td>12</td><td id="cI12">I</td><td id="cO12">O</td><td id="cS12">S</td><td id="cC12">C</td><td id="cT12">T</td><td id="cG12">R</td></tr>
+    <tr><td>11</td><td id="cI11">I</td><td id="cO11">O</td><td id="cS11">S</td><td id="cC11">C</td><td id="cT11">T</td><td id="cG11">R</td><td id="cW11">W</td><td id="pwv11">0</td> <td> <div id="sld11"> </div> </td></tr>
+    <tr><td>10</td><td id="cI10">I</td><td id="cO10">O</td><td id="cS10">S</td><td id="cC10">C</td><td id="cT10">T</td><td id="cG10">R</td><td id="cW10">W</td><td id="pwv10">0</td> <td> <div id="sld10"> </div> </td></tr>
+    <tr><td>9</td><td id="cI9">I</td><td id="cO9">O</td><td id="cS9">S</td><td id="cC9">C</td><td id="cT9">T</td><td id="cG9">R</td><td id="cW9">W</td><td id="pwv9">0</td> <td> <div id="sld9"> </div> </td></tr>
+    <tr><td>8</td><td id="cI8">I</td><td id="cO8">O</td><td id="cS8">S</td><td id="cC8">C</td><td id="cT8">T</td><td id="cG8">R</td></tr>
+    <tr><td>7</td><td id="cI7">I</td><td id="cO7">O</td><td id="cS7">S</td><td id="cC7">C</td><td id="cT7">T</td><td id="cG7">R</td></tr>
+    <tr><td>6</td><td id="cI6">I</td><td id="cO6">O</td><td id="cS6">S</td><td id="cC6">C</td><td id="cT6">T</td><td id="cG6">R</td><td id="cW6">W</td><td id="pwv6">0</td><td> <div id="sld6"> </div> </td></tr>
+    <tr><td>5</td><td id="cI5">I</td><td id="cO5">O</td><td id="cS5">S</td><td id="cC5">C</td><td id="cT5">T</td><td id="cG5">R</td><td id="cW5">W</td><td id="pwv5">0</td><td> <div id="sld5"> </div> </td></tr>
+    <tr><td>4</td><td id="cI4">I</td><td id="cO4">O</td><td id="cS4">S</td><td id="cC4">C</td><td id="cT4">T</td><td id="cG4">R</td></tr>
+    <tr><td>3</td><td id="cI3">I</td><td id="cO3">O</td><td id="cS3">S</td><td id="cC3">C</td><td id="cT3">T</td><td id="cG3">R</td><td id="cW3">W</td><td id="pwv3">0</td><td> <div id="sld3"> </div> </td></tr>
+    <tr><td>2</td><td id="cI2">I</td><td id="cO2">O</td><td id="cS2">S</td><td id="cC2">C</td><td id="cT2">T</td><td id="cG2">R</td></tr>
+</table>
+
+<table id="angTab">
+    <th colspan="6">Analog Inputs<br>min-max limits - Read pins</th>
+    <tr><td ><input type="number" id="min0"/><td ><input type="number" id="max0"/></td><td id="cL0">L</td><td id="cR0">R</td><td>A0</td><td id="anPin0">0</td></tr>
+    <tr><td ><input type="number" id="min1"/><td ><input type="number" id="max1"/></td><td id="cL1">L</td><td id="cR1">R</td><td>A1</td><td id="anPin1">0</td></tr>
+    <tr><td ><input type="number" id="min2"/><td ><input type="number" id="max2"/></td><td id="cL2">L</td><td id="cR2">R</td><td>A2</td><td id="anPin2">0</td></tr>
+    <tr><td ><input type="number" id="min3"/><td ><input type="number" id="max3"/></td><td id="cL3">L</td><td id="cR3">R</td><td>A3</td><td id="anPin3">0</td></tr>
+    <tr><td ><input type="number" id="min4"/><td ><input type="number" id="max4"/></td><td id="cL4">L</td><td id="cR4">R</td><td>A4</td><td id="anPin4">0</td></tr>
+    <tr><td ><input type="number" id="min5"/><td ><input type="number" id="max5"/></td><td id="cL5">L</td><td id="cR5">R</td><td>A5</td><td id="anPin5">0</td></tr>
+</table>
+<div id="macros">
+    <button onclick="reqMacroExec(0)">Execute macro</button><span id="macroRes"> </span><br>
+    <button onclick="reqServoMove(0,90,0)">Move servo</button><span id="servoRes"> </span><br>
+    
+</div>
+</body>
+</html>
