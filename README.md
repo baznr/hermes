@@ -1,4 +1,1 @@
-hermes
-======
-
-hermes
+Remote Arduino administration from a Raspberry Pi via node.js serialport & sockets
